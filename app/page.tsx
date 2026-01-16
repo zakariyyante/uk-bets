@@ -2,6 +2,7 @@ import CasinoCard from './components/CasinoCard';
 import Header from './components/Header';
 import Logo from './components/Logo';
 import MobileCasinoModal from './components/MobileCasinoModal';
+import ExclusiveOfferPopup from './components/ExclusiveOfferPopup';
 import { casinos } from './data/casinos';
 
 export default function Home() {
@@ -9,11 +10,16 @@ export default function Home() {
   const mobileCasinos = casinos.filter(casino => casino.isMobile === true);
   // Filter non-mobile casinos for the main page
   const regularCasinos = casinos.filter(casino => !casino.isMobile);
+  // Get first casino for exclusive offer popup (VegasHero)
+  const exclusiveCasino = casinos.find(casino => casino.name === 'HotLoot') || mobileCasinos[0];
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-purple-950 to-slate-950">
       {/* Mobile Casino Modal - Shows when gclid is present */}
-      <MobileCasinoModal mobileCasinos={mobileCasinos} />
+      {/*<MobileCasinoModal mobileCasinos={mobileCasinos} />*/}
+      
+      {/* Exclusive Offer Popup - Shows after 5 seconds and when user scrolls */}
+      {/*<ExclusiveOfferPopup casino={exclusiveCasino} />*/}
       
       {/* Header */}
       <Header />
