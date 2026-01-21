@@ -38,13 +38,6 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
-    name: "Lizaro",
-    logo: "/lizaro.png",
-    bonus: "350% up to £680 + 200 FREE SPINS",
-    url: "https://any-site1.com/hhbHzRbC",
-    isMobile: true
-  },
-  {
     name: "SlotLair",
     logo: "/slotlair.svg",
     bonus: "100% up to €/£ 3,000 + 100 FREE SPINS",
@@ -56,6 +49,13 @@ const casinosRawData: CasinoRawData[] = [
     logo: "/luckywave.svg",
     bonus: "100% UP TO 2,000 €/£ + 200 FREE SPINS",
     url: "https://any-site1.com/m5Cn7JWD",
+    isMobile: true
+  },
+  {
+    name: "Lizaro",
+    logo: "/lizaro.png",
+    bonus: "350% up to £680 + 200 FREE SPINS",
+    url: "https://any-site1.com/hhbHzRbC",
     isMobile: true
   },
   // {
