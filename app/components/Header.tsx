@@ -8,11 +8,11 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Casinos', href: '#casinos' },
-    { name: 'Guide', href: '#guide' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Casinos', href: '/#casinos' },
+    { name: 'Guide', href: '/#guide' },
+    { name: 'About Us', href: '/#about' },
+    { name: 'Contact Us', href: '/#contact' },
   ];
 
   return (
@@ -20,7 +20,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <a href="#" className="hover:opacity-80 transition-opacity">
+          <a href="/" className="hover:opacity-80 transition-opacity">
             <Logo />
           </a>
 
