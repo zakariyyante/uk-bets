@@ -74,21 +74,19 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
       onClick={handleCardClick}
       onKeyDown={handleCardKeyDown}
     >
-      {/* Badge - Above Logo */}
+      {/* Badge - On top of card */}
       {badge && (
-        <div className="mb-2">
-          <span
-            className={`inline-block rounded-full px-3 py-1 text-[11px] font-extrabold tracking-wide ring-1 ${
-              badge === 'gold' 
-                ? 'bg-emerald-500/20 text-emerald-400 ring-emerald-500/30' 
-                : badge === 'silver' 
-                ? 'bg-sky-500/20 text-sky-400 ring-sky-500/30' 
-                : 'bg-orange-500/20 text-orange-400 ring-orange-500/30'
-            }`}
-          >
-            {badge === 'gold' ? "Most Popular" : badge === 'silver' ? 'Fast Withdrawal' : 'No Wagering'}
-          </span>
-        </div>
+        <span
+          className={`absolute -top-3 left-4 rounded-full px-3 py-1.5 text-[11px] font-extrabold tracking-wide ring-1 ${
+            badge === 'gold' 
+              ? 'bg-emerald-500 text-white ring-emerald-400' 
+              : badge === 'silver' 
+              ? 'bg-sky-500 text-white ring-sky-400' 
+              : 'bg-orange-500 text-white ring-orange-400'
+          }`}
+        >
+          {badge === 'gold' ? "Most Popular" : badge === 'silver' ? 'Fast Withdrawal' : 'No Wagering'}
+        </span>
       )}
 
       {/* Top Section: Logo and Rating */}
