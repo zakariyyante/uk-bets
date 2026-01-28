@@ -25,7 +25,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section - Compact for Mobile */}
-      <section className="container mx-auto px-4 py-6 sm:py-10 lg:py-16 text-center">
+      <section className="container mx-auto px-4 pt-6 pb-2 sm:pt-10 sm:pb-4 lg:pt-16 lg:pb-6 text-center">
         <div className="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-white/5 px-6 py-6 sm:py-10 shadow-xl backdrop-blur">
           <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-emerald-400 font-semibold mb-3">
             Trusted UK Casino Comparison
@@ -46,7 +46,7 @@ export default function Home() {
 
       {/* Main Content */}
       <section id="casinos" className="container mx-auto px-4 pb-16">
-        <div className="mb-4 sm:mb-6 lg:mb-12 text-center">
+        <div className="mb-2 sm:mb-4 lg:mb-6 text-center">
           <h3 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-emerald-400 mb-2 sm:mb-4 tracking-wide">
             Our Top Picks
           </h3>
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* Casino Card */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-40 lg:gap-10 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {regularCasinos.map((casino) => (
             <CasinoCard key={casino.id} casino={casino} />
           ))}

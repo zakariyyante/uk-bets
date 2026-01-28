@@ -48,12 +48,13 @@ export default function MobileCasinoModal({ mobileCasinos }: MobileCasinoModalPr
 
         {/* Hero Section */}
         <div className="bg-gray-800 border-b border-white/10 px-4 sm:px-6 py-2 sm:py-3 backdrop-blur">
-          <div className="container mx-auto text-center">
+          <div className="container mx-auto ">
             <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white mb-1">
-              🎰 New Casino Sites 2026
+              {gclidValue ? 'Top 10 Online Casinos in UK':  '🎰 New Casino Sites 2026'}
             </h2>
-            <p className="text-xs sm:text-sm lg:text-base text-gray-400">
-              Check the best casinos in UK
+            <p className="text-xs sm:text-sm lg:text-base text-cyan-300">
+              {gclidValue ? 'Explore new casino platforms with fast payouts and hundreds of engaging slots.':  'Check the best casinos in UK'}
+
             </p>
           </div>
         </div>
