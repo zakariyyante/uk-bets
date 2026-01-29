@@ -72,7 +72,7 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
       {/* Badge - Top of Card */}
       {badge && (
         <span className={`absolute top-0 left-0 rounded-br-lg rounded-tl-2xl px-3 py-1.5 text-[11px] font-bold ${badgeClass}`}>
-          {badge === 'gold' ? "Most Popular" : badge === 'silver' ? 'Best Payment Methods' : 'Trusted / Licensed'}
+          {badge === 'gold' ? "Most Popular" : badge === 'silver' ? 'Trusted / Licensed' : 'Fast Withdrawal'}
         </span>
       )}
 
