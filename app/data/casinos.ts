@@ -44,7 +44,6 @@ const casinosRawData: CasinoRawData[] = [
     url: "https://any-site1.com/mSFVwGrp",
     isMobile:true
   },
-
   {
     name: "Lizaro",
     logo: "/lizaro.png",
@@ -52,20 +51,22 @@ const casinosRawData: CasinoRawData[] = [
     url: "https://any-site1.com/hhbHzRbC",
     isMobile: true
   },
+
   {
-    name: "CasinoPrestige",
-    logo: "/prestige.svg",
-    bonus: "100% Bonus up to £750 + 100 Free Spins + 3 Wheel of Luck Spins",
-    url: "https://any-site1.com/yZ4VnswQ",
-    isMobile:true
-  },
-  {
-    name: "RollySpin",
-    logo: "/RollySpin.svg",
-    bonus: "200% up to 1,000£ + 50 FREE SPINS",
-    url: "https://any-site1.com/znYjBPcw",
+    name: "LuckyWave",
+    logo: "/luckywave.svg",
+    bonus: "100% UP TO 2,000 €/£ + 200 FREE SPINS",
+    url: "https://any-site1.com/m5Cn7JWD",
     isMobile: true
   },
+  {
+    name: "LegionBet",
+    logo: "/legionbet.svg",
+    bonus: "250% up to £13000 + 300 FREE SPINS",
+    url: "https://any-site1.com/K7w9ctrg",
+    isMobile: true
+  },
+
 
 
   // {
@@ -75,13 +76,25 @@ const casinosRawData: CasinoRawData[] = [
   //   url: "https://any-site1.com/yZ4VnswQ",
   //   isMobile:true
   // },
+
+
+
+  //
   // {
-  //   name: "LuckyWave",
-  //   logo: "/luckywave.svg",
-  //   bonus: "100% UP TO 2,000 €/£ + 200 FREE SPINS",
-  //   url: "https://any-site1.com/m5Cn7JWD",
+  //   name: "RollySpin",
+  //   logo: "/RollySpin.svg",
+  //   bonus: "200% up to 1,000£ + 50 FREE SPINS",
+  //   url: "https://any-site1.com/znYjBPcw",
   //   isMobile: true
   // },
+  // {
+  //   name: "CasinoPrestige",
+  //   logo: "/prestige.svg",
+  //   bonus: "100% Bonus up to £750 + 100 Free Spins + 3 Wheel of Luck Spins",
+  //   url: "https://any-site1.com/yZ4VnswQ",
+  //   isMobile:true
+  // },
+
   // {
   //   name: "DaffSpin",
   //   logo: "/daffspin.png",
