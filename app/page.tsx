@@ -24,22 +24,31 @@ export default function Home() {
       {/* Header */}
       <Header />
 
-      {/* Hero Section - Compact for Mobile */}
-      <section className="container mx-auto px-4 pt-6 pb-2 sm:pt-10 sm:pb-4 lg:pt-16 lg:pb-6 text-center">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-white/5 px-6 py-6 sm:py-10 shadow-xl backdrop-blur">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-emerald-400 font-semibold mb-3">
-            Trusted UK Casino Comparison
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 pt-6 pb-4 sm:pt-10 sm:pb-6 lg:pt-12 lg:pb-8 text-center">
+        <div className="mx-auto max-w-4xl">
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-500/30">
+            <span className="text-xs sm:text-sm font-semibold text-teal-400 uppercase tracking-wider">🇬🇧 UK's Premier Casino Guide</span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
+            Discover the <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Best Casinos</span> in the UK
+          </h1>
+          <p className="text-base sm:text-lg text-gray-400 mb-6 max-w-2xl mx-auto">
+            Hand-picked platforms with exclusive bonuses, fast payouts, and top-tier gaming experiences
           </p>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3 sm:mb-4">
-             Online UK Casino Sites 2026
-          </h2>
-          <p className="text-sm sm:text-lg lg:text-xl text-gray-400 mb-4 sm:mb-6">
-            Compare brands
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-gray-400">
-            <span className="rounded-full bg-emerald-500/20 px-3 py-1 font-semibold text-emerald-400">Licensed &amp; Verified</span>
-            <span className="rounded-full bg-orange-500/20 px-3 py-1 font-semibold text-orange-400">2026 Bonus Guide</span>
-            <span className="rounded-full bg-sky-500/20 px-3 py-1 font-semibold text-sky-400">Mobile First Picks</span>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 bg-[#1a1625] rounded-full px-4 py-2 border border-white/10">
+              <span className="text-emerald-400">✓</span>
+              <span className="text-white/80 text-sm font-medium">UKGC Licensed</span>
+            </div>
+            <div className="flex items-center gap-2 bg-[#1a1625] rounded-full px-4 py-2 border border-white/10">
+              <span className="text-amber-400">★</span>
+              <span className="text-white/80 text-sm font-medium">Expert Rated</span>
+            </div>
+            <div className="flex items-center gap-2 bg-[#1a1625] rounded-full px-4 py-2 border border-white/10">
+              <span className="text-cyan-400">⚡</span>
+              <span className="text-white/80 text-sm font-medium">Instant Withdrawals</span>
+            </div>
           </div>
         </div>
       </section>
