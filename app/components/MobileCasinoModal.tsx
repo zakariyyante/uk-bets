@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { Casino } from '../data/casinos';
 import CasinoCard from './CasinoCard';
 import Header from './Header';
@@ -8,23 +8,12 @@ import Footer from './Footer';
 
 interface MobileCasinoModalProps {
   mobileCasinos: Casino[];
+  isOnline: boolean;
+  gclidValue?: string;
 }
 
-export default function MobileCasinoModal({ mobileCasinos }: MobileCasinoModalProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [gclidValue, setGclidValue] = useState<string>('');
-
-  useEffect(() => {
-    // Check if URL contains gclid parameter (Google Ads click ID)
-    const urlParams = new URLSearchParams(window.location.search);
-    const gclid = urlParams.get('gclid');
-    
-    // Only open modal if gclid exists AND there are mobile casinos to show
-    if (gclid && mobileCasinos.length > 0) {
-      setGclidValue(gclid);
-      setIsOpen(true);
-    }
-  }, [mobileCasinos]);
+export default function MobileCasinoModal({ mobileCasinos, isOnline, gclidValue = '' }: MobileCasinoModalProps) {
+  const isOpen = isOnline && mobileCasinos.length > 0;
 
   // Update casino URLs with actual gclid value
   const updatedCasinos = useMemo(() => {
@@ -50,10 +39,10 @@ export default function MobileCasinoModal({ mobileCasinos }: MobileCasinoModalPr
         <div className="bg-gray-800 border-b border-white/10 px-4 sm:px-6 py-2 sm:py-3 backdrop-blur">
           <div className="container mx-auto ">
             <h1 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white mb-1">
-              {gclidValue ? 'The Best UK Casino Sites 2026':  '🎰 New Casino Sites 2026'}
+              {isOnline ? 'The Best UK Casino Sites 2026' : '🎰 New Casino Sites 2026'}
             </h1>
             <h2 className="text-left sm:text-xl lg:text-shadow-xs font-extrabold text-cyan-200 mb-1">
-              {gclidValue ? 'Explore top casino and betting platforms with fast payouts and welcome bonuses.':  'Check the best casinos in UK'}
+              {isOnline ? 'Explore top casino and betting platforms with fast payouts and welcome bonuses.' : 'Check the best casinos in UK'}
 
             </h2>
           </div>
@@ -65,7 +54,7 @@ export default function MobileCasinoModal({ mobileCasinos }: MobileCasinoModalPr
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-4 max-w-6xl mx-auto">
             {updatedCasinos.map((casino, index) => (
               <CasinoCard
-                gclid={true}
+                isOnline={isOnline}
                 key={casino.id} 
                 casino={casino} 
                 badge={index === 0 ? 'gold' : index === 1 ? 'silver' : index === 2 ? 'bronze' : undefined}

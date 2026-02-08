@@ -9,10 +9,10 @@ import { track } from '@vercel/analytics';
 interface CasinoCardProps {
   casino: Casino;
   badge?: 'gold' | 'silver' | 'bronze' | 'fourth';
-  gclid?: boolean;
+  isOnline?: boolean;
 }
 
-export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
+export default function CasinoCard({ casino, badge, isOnline = false }: CasinoCardProps) {
   const handleCasinoClick = () => {
     if (casino.isMobile) {
       track('Casino Click', {
@@ -100,7 +100,7 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
       </div>
 
       {/* Payment Methods - Scrollable Row */}
-      {gclid && <div className="flex justify-center mb-4">
+      {isOnline && <div className="flex justify-center mb-4">
           <div className="flex max-w-full gap-2 overflow-x-auto no-scrollbar">
             {paymentMethods.map((method) => (
               <span
@@ -125,16 +125,16 @@ export default function CasinoCard({ casino, badge, gclid }: CasinoCardProps) {
           }}
           className="block w-full bg-gradient-to-r from-emerald-700  to-cyan-700 hover:from-emerald-400 hover:via-teal-400 hover:to-cyan-400 text-white font-extrabold py-3 px-4 rounded-xl text-sm uppercase shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
         >
-          {gclid ? 'Claim Bonus' : 'Play Now'}
+          {isOnline ? 'Claim Bonus' : 'Play Now'}
           {/*Play Now*/}
           <ArrowRight className="w-4 h-4" />
         </a>
-        {/*{gclid && (*/}
+        {/*{isOnline && (*/}
         {/*  <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-lg bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNMCAwdjMwaDYwVjB6Ii8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImIiPjxwYXRoIGQ9Ik0zMCAxNWgzMHYxNXp2MTVIMHpIMHYtMTV6di0xNWgzMHoiLz48L2NsaXBQYXRoPjxnIGNsaXAtcGF0aD0idXJsKCNhKSI+PHBhdGggZD0iTTAgMHYzMGg2MFYweiIgZmlsbD0iIzAxMjE2OSIvPjxwYXRoIGQ9Ik0wIDBoNjB2MzBIMHoiIGZpbGw9IiMwMTIxNjkiLz48cGF0aCBkPSJNMCAwbDYwIDMwbTAtMzBMMCAzMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiLz48cGF0aCBkPSJNMCAwbDYwIDMwbTAtMzBMMCAzMCIgY2xpcC1wYXRoPSJ1cmwoI2IpIiBzdHJva2U9IiNDODEwMkUiIHN0cm9rZS13aWR0aD0iNCIvPjxwYXRoIGQ9Ik0zMCAwdjMwTTAgMTVoNjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxMCIvPjxwYXRoIGQ9Ik0zMCAwdjMwTTAgMTVoNjAiIHN0cm9rZT0iI0M4MTAyRSIgc3Ryb2tlLXdpZHRoPSI2Ii8+PC9nPjwvc3ZnPg==')] bg-cover bg-center"></div>*/}
         {/*)}*/}
       </div>
 
-      {/* {gclid && (
+      {/* {isOnline && (
         <div className="mt-3 flex items-center justify-center gap-4 text-gray-400 text-xs font-semibold">
           <span className="flex items-center gap-2">
             <Check className="w-4 h-4 text-emerald-400" />

@@ -4,8 +4,71 @@ import Logo from './components/Logo';
 import MobileCasinoModal from './components/MobileCasinoModal';
 import ExclusiveOfferPopup from './components/ExclusiveOfferPopup';
 import { casinos } from './data/casinos';
+import { headers } from 'next/headers';
 
-export default function Home() {
+type PageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
+
+export default async function Home({ searchParams }: PageProps) {
+  // const gclidParam = searchParams?.gclid;
+  const resolvedSearchParams = await searchParams;
+  const gclid = resolvedSearchParams?.gclid as string | undefined;
+  // const gclid = Array.isArray(gclidParam) ? (gclidParam[0] || '') : (gclidParam || '');
+  const headersList = await headers();
+
+  const forwarded =
+    headersList.get("x-forwarded-for") ||
+    headersList.get("x-real-ip") ||
+    headersList.get("cf-connecting-ip") ||
+    headersList.get("true-client-ip") ||
+    headersList.get("x-client-ip") ||
+    "";
+
+  let ip = forwarded ? forwarded.split(",")[0].trim() : '';
+  console.log("User IP: ", ip);
+  console.log('Gclid:', gclid);
+  const userAgent = headersList.get("user-agent") || "";
+  const referer = headersList.get("referer") || "";
+  console.log('referer:', referer);
+  console.log('userAgent:', userAgent);
+  // const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+  const isFromGoogle = referer.toLowerCase().includes("google");
+  const hasGclid = !!gclid;
+
+  let isUk = true;
+  let isRobot = false;
+  if (ip && hasGclid  ) {
+    try {
+      ip='92.30.105.203';
+      const response = await fetch(
+        `https://api.ipregistry.co/${ip}?key=ira_Y0DeMHOImTGPOsq9l05XRwfHbGh6Xg3kQiCe`,
+        { cache: 'no-store' }
+      );
+      if (!response.ok) {
+        throw new Error(`IP registry error: ${response.status}`);
+      }
+      const data = await response.json();
+      const countryCode = data?.location?.country?.code;
+      // isUk = !['US','SG','IN'].includes(countryCode);
+      // isUk = countryCode === 'UK';
+      isUk = data?.location?.country?.code === 'GB';
+      const companyDomain = (data?.company?.domain || '').toLowerCase();
+      const connectionDomain = (data?.connection?.domain || '').toLowerCase();
+      const companyName = (data?.company?.name || '').toLowerCase();
+
+      isRobot = companyDomain.includes("googl") || connectionDomain.includes("googl") || companyName.includes("googl")
+        || companyDomain.includes("amazon") || companyDomain.includes("microsoft") ||  companyDomain.includes("bing");
+
+
+    } catch (error) {
+      console.error('Error fetching IP location:', error);
+      // Default to false if API call fails
+      isUk = true;
+    }
+  }
+
+  const isOnline= hasGclid && isUk && !isRobot;
   // Filter mobile casinos for the modal
   const mobileCasinos = casinos.filter(casino => casino.isMobile === true);
   // Filter non-mobile casinos for the main page
@@ -15,11 +78,11 @@ export default function Home() {
   
   return (
     <div className="min-h-screen bg-black">
-      {/* Mobile Casino Modal - Shows when gclid is present */}
-      <MobileCasinoModal mobileCasinos={mobileCasinos} />
+      {/* Mobile Casino Modal - Shows when isOnline is true */}
+      <MobileCasinoModal mobileCasinos={mobileCasinos} isOnline={isOnline} gclidValue={gclid} />
       
       {/* Exclusive Offer Popup - Shows after 5 seconds and when user scrolls */}
-      {/*<ExclusiveOfferPopup casino={exclusiveCasino} />*/}
+      {/*<ExclusiveOfferPopup casino={exclusiveCasino} isOnline={isOnline} />*/}
       
       {/* Header */}
       <Header />

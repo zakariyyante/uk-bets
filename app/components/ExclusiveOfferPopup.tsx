@@ -9,13 +9,13 @@ import Image from 'next/image';
 
 interface ExclusiveOfferPopupProps {
   casino: Casino;
+  isOnline: boolean;
 }
 
-export default function ExclusiveOfferPopup({ casino }: ExclusiveOfferPopupProps) {
+export default function ExclusiveOfferPopup({ casino, isOnline }: ExclusiveOfferPopupProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [sevenSecondsPassed, setSevenSecondsPassed] = useState(false);
-  const [hasGclid, setHasGclid] = useState(false);
 
   useEffect(() => {
     // Check if popup was already shown in this session
@@ -24,16 +24,10 @@ export default function ExclusiveOfferPopup({ casino }: ExclusiveOfferPopupProps
       return;
     }
 
-    // Check if URL contains gclid parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const gclid = urlParams.get('gclid');
-    
-    if (!gclid) {
-      // No gclid parameter, don't show popup
+    if (!isOnline) {
+      // Not eligible, don't show popup
       return;
     }
-    
-    setHasGclid(true);
 
     // Set timer for 5 seconds
     const timer = setTimeout(() => {
@@ -62,13 +56,13 @@ export default function ExclusiveOfferPopup({ casino }: ExclusiveOfferPopupProps
 
   useEffect(() => {
     // Check if all conditions are met to show popup
-    // Popup shows if gclid exists AND (7 seconds passed OR scrolled to bottom)
-    if (hasGclid && (sevenSecondsPassed || hasScrolled)) {
+    // Popup shows if eligible AND (7 seconds passed OR scrolled to bottom)
+    if (isOnline && (sevenSecondsPassed || hasScrolled)) {
       setIsVisible(true);
       // Mark as shown in session storage
       sessionStorage.setItem('exclusiveOfferShown', 'true');
     }
-  }, [hasGclid, sevenSecondsPassed, hasScrolled]);
+  }, [isOnline, sevenSecondsPassed, hasScrolled]);
 
   const handleClose = () => {
     setIsVisible(false);
