@@ -32,6 +32,13 @@ const topBadges = ["Best Bonus", "Top Pick", "Trending Now"];
 
 const casinosRawData: CasinoRawData[] = [
   {
+    name: "Lizaro",
+    logo: "/lizaro.png",
+    bonus: "350% up to £680 + 200 FREE SPINS",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=lizaro",
+    isMobile: true
+  },
+  {
     name: "BetNinja",
     logo: "/BetNinja.png",
     bonus: "£1000 + 100 Free Spins",
@@ -46,10 +53,10 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
-    name: "Lizaro",
-    logo: "/lizaro.png",
-    bonus: "350% up to £680 + 200 FREE SPINS",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=lizaro",
+    name: "Qbet",
+    logo: "/qbet.svg",
+    bonus: "100% UP TO £100 BONUS + 200 FREE SPINS",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=qbet",
     isMobile: true
   },
   {
@@ -68,26 +75,19 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
-    name: "Qbet",
-    logo: "/qbet.svg",
-    bonus: "100% UP TO £100 BONUS + 200 FREE SPINS",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=qbet",
-    isMobile: true
-  },
-  {
     name: "LuckyTwice",
     logo: "/luckytwice.svg",
     bonus: "100% up to £500 + 250 FREE SPINS",
     url: "https://topbritcasinos.com/B7W2b6jr?utm_target=luckytwice",
     isMobile:true
   },
-  {
-    name: "VegasHero",
-    logo: "/VegasHero.png",
-    bonus: "300% up to €500 + 300 FREE SPINS",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=vegas",
-    isMobile: true
-  },
+  // {
+  //   name: "VegasHero",
+  //   logo: "/VegasHero.png",
+  //   bonus: "300% up to €500 + 300 FREE SPINS",
+  //   url: "https://topbritcasinos.com/B7W2b6jr?utm_target=vegas",
+  //   isMobile: true
+  // },
   {
     name: "GQbet",
     logo: "/gqbet.gif",
