@@ -46,6 +46,14 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
+    name: "HarryCasino",
+    logo: "/harry.svg",
+    bonus: "£1000 BONUS + 100 Free Spins",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=harry",
+    isMobile:true
+  },
+
+  {
     name: "Fish&Spins",
     logo: "/fishspins.svg",
     bonus: "£750 BONUS + 100 Free Spins",
@@ -87,14 +95,6 @@ const casinosRawData: CasinoRawData[] = [
     url: "https://topbritcasinos.com/B7W2b6jr?utm_target=luckywave",
     isMobile: true
   },
-
-  // {
-  //   name: "HarryCasino",
-  //   logo: "/harry.svg",
-  //   bonus: "£1000 BONUS + 100 Free Spins",
-  //   url: "https://topbritcasinos.com/B7W2b6jr?utm_target=harry",
-  //   isMobile:true
-  // },
 
 
 
