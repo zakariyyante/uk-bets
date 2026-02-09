@@ -43,14 +43,6 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
-    name: "BetNinja",
-    logo: "/BetNinja.png",
-    bonus: "£1000 + 100 Free Spins",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=betninja",
-    votes: 4915,
-    isMobile: true
-  },
-  {
     name: "SpinShark",
     logo: "/spinshark.svg",
     bonus: "£900 BONUS + 150 Free Spins",
@@ -66,6 +58,15 @@ const casinosRawData: CasinoRawData[] = [
     votes: 1724,
     isMobile: true
   },
+  {
+    name: "BetNinja",
+    logo: "/BetNinja.png",
+    bonus: "£1000 + 100 Free Spins",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=betninja",
+    votes: 4915,
+    isMobile: true
+  },
+
 
   {
     name: "Qbet",
