@@ -33,14 +33,12 @@ const topBadges = ["Best Bonus", "Top Pick", "Trending Now"];
 // Raw casino data without id, rating, and badgess
 
 const casinosRawData: CasinoRawData[] = [
-
   {
-    name: "Lizaro",
-    logo: "/lizaro.png",
-    // bonus: "350% up to £680 + 200 FREE SPINS",
-    bonus: "200% up to £1000 + 250 FREE SPINS",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=lizaro",
-    votes: 5872,
+    name: "SpinShark",
+    logo: "/spinshark.svg",
+    bonus: "£900 BONUS + 150 Free Spins",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=spinshark",
+    votes: 4143,
     isMobile: true
   },
   {
@@ -52,11 +50,12 @@ const casinosRawData: CasinoRawData[] = [
     isMobile: true
   },
   {
-    name: "SpinShark",
-    logo: "/spinshark.svg",
-    bonus: "£900 BONUS + 150 Free Spins",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=spinshark",
-    votes: 4143,
+    name: "Lizaro",
+    logo: "/lizaro.png",
+    // bonus: "350% up to £680 + 200 FREE SPINS",
+    bonus: "200% up to £1000 + 250 FREE SPINS",
+    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=lizaro",
+    votes: 5872,
     isMobile: true
   },
   {
