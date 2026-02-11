@@ -100,11 +100,11 @@ export default function CasinoCard({ casino, rank, badge, isOnline = false }: Ca
     </div>
      }
 
-       {isOnline &&
-        <div className="mb-4 flex items-center justify-between rounded-lg border border-red-600/30 bg-red-600/10 px-3 py-2">
-      <span className="text-xs sm:text-sm font-semibold text-red-300">⚡ Limited-time bonus available</span>
-      <span className="text-xs sm:text-sm font-bold text-red-200">Ends soon</span>
-    </div>}
+       {/* {isOnline && */}
+        {/* <div className="mb-4 flex items-center justify-between rounded-lg border border-red-600/30 bg-red-600/10 px-3 py-2"> */}
+      {/* <span className="text-xs sm:text-sm font-semibold text-red-300">⚡ Limited-time bonus available</span> */}
+      {/* <span className="text-xs sm:text-sm font-bold text-red-200">Ends soon</span> */}
+    {/* </div>} */}
 
       <div className="text-center mb-4 rounded-xl bg-white/5 px-4 py-4">
         <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
