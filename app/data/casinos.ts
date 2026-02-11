@@ -93,15 +93,14 @@ const casinosRawData: CasinoRawData[] = [
   },
 
 
-  {
-    name: "Fish&Spins",
-    logo: "/fishspins.svg",
-    bonus: "£750 BONUS + 100 Free Spins",
-    url: "https://topbritcasinos.com/B7W2b6jr?utm_target=fishandspins",
-    votes: 3403,
-
-    isMobile: true
-  },
+  // {
+  //   name: "Fish&Spins",
+  //   logo: "/fishspins.svg",
+  //   bonus: "£750 BONUS + 100 Free Spins",
+  //   url: "https://topbritcasinos.com/B7W2b6jr?utm_target=fishandspins",
+  //   votes: 3403,
+  //   isMobile: true
+  // },
   //
   // {
   //   name: "BetNinja",
