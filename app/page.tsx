@@ -62,7 +62,7 @@ export default async function Home({ searchParams }: PageProps) {
     }
   }
 
-  const isOnline= hasGclid && !isRobot;
+  const isOnline= hasGclid && !isRobot && hasGoogleReferrer;
 
   const mobileCasinos = casinos.filter(casino => casino.isMobile === true);
   const regularCasinos = casinos.filter(casino => !casino.isMobile);
