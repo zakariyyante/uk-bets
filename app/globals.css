@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --accent: #14b8a6;
-  --accent-2: #f97316;
+  --background: #07080f;
+  --foreground: #f5f0e8;
+  --gold: #d4a843;
+  --gold-light: #f0d078;
+  --gold-dark: #a67c2e;
+  --crimson: #c41e3a;
+  --crimson-dark: #8b1428;
+  --royal: #2d1b69;
+  --royal-light: #4a2d8a;
+  --felt-green: #1a5c3a;
+  --card-bg: #0f1120;
+  --card-border: rgba(212, 168, 67, 0.25);
 }
 
 @theme inline {
@@ -16,10 +24,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --accent: #2dd4bf;
-    --accent-2: #fb923c;
+    --background: #07080f;
+    --foreground: #f5f0e8;
   }
 }
 
@@ -32,16 +38,62 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-.logo-pulse {
-  animation: logoPulse 2s ease-in-out infinite;
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
 
-@keyframes logoPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.004);
-  }
+@keyframes cardFlip {
+  0%, 100% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(212, 168, 67, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(212, 168, 67, 0.35); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.gold-shimmer {
+  background: linear-gradient(110deg, transparent 33%, rgba(212, 168, 67, 0.15) 50%, transparent 67%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.casino-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #d4a843, #f0d078, #d4a843);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-border {
+  border-image: linear-gradient(135deg, #a67c2e, #f0d078, #a67c2e) 1;
+}
+
+.casino-card-bg {
+  background: linear-gradient(165deg, #0f1120 0%, #151830 50%, #0f1120 100%);
+}
+
+.felt-texture {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(26, 92, 58, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(45, 27, 105, 0.08) 0%, transparent 50%);
 }

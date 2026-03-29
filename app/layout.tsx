@@ -3,8 +3,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Casino Top Choices - Best Online Casino Sites UK 2026",
-  description: "Compare the best online casino sites in the UK. Find trusted, licensed casinos with great bonuses, fast withdrawals, and secure gaming.",
+  title: "Top Casinos - Best Online Casino Sites UK 2026",
+  description: "Discover the UK's finest online casinos. Expert-rated, UKGC licensed platforms with exclusive bonuses, fast withdrawals, and premium gaming.",
 };
 
 export default function RootLayout({
