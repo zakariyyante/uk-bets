@@ -40,14 +40,7 @@ const casinosRawData: CasinoRawData[] = [
     votes: 5872,
     isMobile: true
   },
-  {
-    name: "Sankra",
-    logo: "/sankra.svg",
-    bonus: "100% UP TO £600 + 200 FREE SPINS",
-    url: "https://sankra.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=sankra",
-    votes: 5872,
-    isMobile: true
-  },
+
   {
     name: "30Bet",
     logo: "/30bet.gif",
@@ -69,6 +62,14 @@ const casinosRawData: CasinoRawData[] = [
     logo: "/odinfortune.png",
     bonus: "Up to €4,000 + 700 FS",
     url: "https://odinfortune.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=odinfortune",
+    votes: 5872,
+    isMobile: true
+  },
+  {
+    name: "Sankra",
+    logo: "/sankra.svg",
+    bonus: "100% UP TO £600 + 200 FREE SPINS",
+    url: "https://sankra.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=sankra",
     votes: 5872,
     isMobile: true
   },
