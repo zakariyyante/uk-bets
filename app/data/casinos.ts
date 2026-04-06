@@ -73,14 +73,14 @@ const casinosRawData: CasinoRawData[] = [
     votes: 5872,
     isMobile: true
   },
-  {
-    name: "Lizaro",
-    logo: "/lizaro.png",
-    bonus: "200% up to £1000 + 250 FREE SPINS",
-    url: "https://lizaro.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=lizaro",
-    votes: 5872,
-    isMobile: true
-  },
+  // {
+  //   name: "Lizaro",
+  //   logo: "/lizaro.png",
+  //   bonus: "200% up to £1000 + 250 FREE SPINS",
+  //   url: "https://lizaro.muforaset.live?sub_id_1=t4p6a0wbej43uo&utm_source=lizaro",
+  //   votes: 5872,
+  //   isMobile: true
+  // },
 
 
 
