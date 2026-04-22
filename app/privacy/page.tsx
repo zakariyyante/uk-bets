@@ -1,18 +1,19 @@
 import Header from '../components/Header';
-import Logo from '../components/Logo';
+import Footer from "../components/Footer";
+import { BRAND } from "../config/brand";
 
 export const metadata = {
-  title: "Privacy Policy - Casino Top Choices",
-  description: "Privacy Policy for Casino Top Choices. Learn how we collect, use, and protect your personal information.",
+  title: `Privacy Policy - ${BRAND.name}`,
+  description: `Privacy Policy for ${BRAND.name}. Learn how we collect, use, and protect your personal information.`,
 };
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[color:var(--background)]">
       <Header />
       
       <main className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-4xl">
-        <div className="bg-zinc-900 rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-lg">
+        <div className="bg-[color:var(--card-bg)] rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-lg">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 sm:mb-8">
             Privacy Policy
           </h1>
@@ -25,7 +26,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">1. Introduction</h2>
               <p>
-                Welcome to Casino Top Choices ("we," "our," or "us"). We operate the website uk10topslot.com
+                Welcome to {BRAND.name} ("we," "our," or "us"). We operate the website {BRAND.domain}
                 (the "Service"). This Privacy Policy explains how we collect, use, disclose, and safeguard 
                 your information when you visit our website.
               </p>
@@ -188,8 +189,16 @@ export default function PrivacyPolicy() {
                 contact us:
               </p>
               <div className="mt-3 bg-white/5 rounded-2xl p-4 border border-white/10">
-                <p className="font-semibold text-white">Casino Top Choices</p>
-                <p>Website: <a href="https://www.uk10topslot.com" className="text-emerald-400 hover:text-emerald-300 underline">uk10topslot.com</a></p>
+                <p className="font-semibold text-white">{BRAND.name}</p>
+                <p>
+                  Website:{" "}
+                  <a
+                    href={`https://${BRAND.domain}`}
+                    className="text-emerald-400 hover:text-emerald-300 underline"
+                  >
+                    {BRAND.domain}
+                  </a>
+                </p>
                 <p>Email: Please use our contact form on the website</p>
               </div>
             </section>
@@ -197,25 +206,7 @@ export default function PrivacyPolicy() {
         </div>
       </main>
 
-      <footer className="bg-black border-t border-white/10 py-6 sm:py-8 lg:py-12 mt-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex justify-center mb-6 sm:mb-8">
-            <Logo />
-          </div>
-          <div className="border-t border-white/10 pt-4 sm:pt-6 text-center">
-            <p className="text-gray-500 text-xs sm:text-sm">
-              © 2026 uk10topslot.com. For educational purposes only. 18+ only. Please gamble responsibly.
-            </p>
-            <div className="mt-4 flex justify-center gap-4 text-xs sm:text-sm">
-              <a href="/" className="text-emerald-400 hover:text-emerald-300">Home</a>
-              <span className="text-gray-600">|</span>
-              <a href="/privacy" className="text-emerald-400 hover:text-emerald-300">Privacy Policy</a>
-              <span className="text-gray-600">|</span>
-              <a href="/terms" className="text-emerald-400 hover:text-emerald-300">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

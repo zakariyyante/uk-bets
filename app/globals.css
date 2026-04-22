@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030b1a;
-  --foreground: #e0f2fe;
-  --blue: #3b82f6;
-  --blue-light: #93c5fd;
-  --blue-dark: #1d4ed8;
-  --cyan: #06b6d4;
-  --cyan-light: #67e8f9;
-  --violet: #8b5cf6;
-  --card-bg: #091428;
-  --card-border: rgba(59, 130, 246, 0.25);
+  /* Dark navy base with cleaner white surfaces */
+  /* Slightly lighter base + more off-white contrast */
+  --background: #081a33; /* was #051226 */
+  --foreground: #f8fafc;
+  --card-bg: #102a52; /* was #0b1f3d */
+  --surface-1: #0b2142; /* was #071a34 */
+  --surface-2: #14305c; /* was #0e2a52 */
+
+  /* Branding palette (override per site) */
+  --primary: #3b82f6;
+  --primary-2: #1d4ed8;
+  --accent: #06b6d4;
+  --muted: rgba(59, 130, 246, 0.14);
 }
 
 @theme inline {
@@ -45,8 +48,8 @@ body {
 }
 
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.12); }
-  50% { box-shadow: 0 0 42px rgba(59, 130, 246, 0.30); }
+  0%, 100% { box-shadow: 0 0 20px color-mix(in oklab, var(--primary) 14%, transparent); }
+  50% { box-shadow: 0 0 42px color-mix(in oklab, var(--primary) 34%, transparent); }
 }
 
 @keyframes sparkle {
@@ -55,7 +58,12 @@ body {
 }
 
 .gold-shimmer {
-  background: linear-gradient(110deg, transparent 33%, rgba(59, 130, 246, 0.10) 50%, transparent 67%);
+  background: linear-gradient(
+    110deg,
+    transparent 33%,
+    color-mix(in oklab, var(--primary) 14%, transparent) 50%,
+    transparent 67%
+  );
   background-size: 200% 100%;
   animation: shimmer 3s linear infinite;
 }
@@ -69,22 +77,22 @@ body {
 }
 
 .gold-text {
-  background: linear-gradient(135deg, #3b82f6, #06b6d4, #3b82f6);
+  background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gold-border {
-  border-image: linear-gradient(135deg, #1d4ed8, #06b6d4, #1d4ed8) 1;
+  border-image: linear-gradient(135deg, var(--primary-2), var(--accent), var(--primary-2)) 1;
 }
 
 .casino-card-bg {
-  background: linear-gradient(165deg, #091428 0%, #0d1e3a 50%, #091428 100%);
+  background: linear-gradient(165deg, var(--card-bg) 0%, #0f2a52 50%, var(--card-bg) 100%);
 }
 
 .felt-texture {
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, color-mix(in oklab, var(--accent) 10%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, color-mix(in oklab, var(--primary) 8%, transparent) 0%, transparent 50%);
 }

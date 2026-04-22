@@ -1,18 +1,19 @@
 import Header from '../components/Header';
-import Logo from '../components/Logo';
+import Footer from "../components/Footer";
+import { BRAND } from "../config/brand";
 
 export const metadata = {
-  title: "Terms of Service - Casino Top Choices",
-  description: "Terms of Service for Casino Top Choices. Read our terms and conditions for using our casino comparison website.",
+  title: `Terms of Service - ${BRAND.name}`,
+  description: `Terms of Service for ${BRAND.name}. Read our terms and conditions for using our casino comparison website.`,
 };
 
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[color:var(--background)]">
       <Header />
       
       <main className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-4xl">
-        <div className="bg-zinc-900 rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-lg">
+        <div className="bg-[color:var(--card-bg)] rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-lg">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 sm:mb-8">
             Terms of Service
           </h1>
@@ -25,7 +26,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
               <p>
-                By accessing and using uk10topslot.com (the "Website" or "Service"), you accept and agree
+                By accessing and using {BRAND.domain} (the "Website" or "Service"), you accept and agree
                 to be bound by the terms and provision of this agreement. If you do not agree to abide by the 
                 above, please do not use this Service.
               </p>
@@ -34,7 +35,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">2. Description of Service</h2>
               <p>
-                Casino Top Choices is an information and comparison website that provides reviews, ratings, and 
+                {BRAND.name} is an information and comparison website that provides reviews, ratings, and 
                 information about online casino operators. We are an independent comparison service and do not 
                 operate any gambling services ourselves.
               </p>
@@ -115,7 +116,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">7. Limitation of Liability</h2>
               <p>
-                To the maximum extent permitted by applicable law, Casino Top Choices and its owners, employees, 
+                To the maximum extent permitted by applicable law, {BRAND.name} and its owners, employees, 
                 and affiliates shall not be liable for any indirect, incidental, special, consequential, or 
                 punitive damages, including without limitation, loss of profits, data, use, goodwill, or other 
                 intangible losses, resulting from:
@@ -162,7 +163,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">9. Intellectual Property</h2>
               <p>
-                The Service and its original content, features, and functionality are owned by Casino Top Choices 
+                The Service and its original content, features, and functionality are owned by {BRAND.name} 
                 and are protected by international copyright, trademark, patent, trade secret, and other 
                 intellectual property laws.
               </p>
@@ -176,7 +177,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">10. Affiliate Disclosure</h2>
               <p>
-                Casino Top Choices may receive compensation from casino operators when users click on links or 
+                {BRAND.name} may receive compensation from casino operators when users click on links or 
                 sign up through our Service. This compensation helps us maintain and improve our Service.
               </p>
               <p className="mt-3">
@@ -217,8 +218,16 @@ export default function TermsOfService() {
                 If you have any questions about these Terms of Service, please contact us:
               </p>
               <div className="mt-3 bg-white/5 rounded-2xl p-4 border border-white/10">
-                <p className="font-semibold text-white">Casino Top Choices</p>
-                <p>Website: <a href="https://www.uk10topslot.com" className="text-emerald-400 hover:text-emerald-300 underline">uk10topslot.com</a></p>
+                <p className="font-semibold text-white">{BRAND.name}</p>
+                <p>
+                  Website:{" "}
+                  <a
+                    href={`https://${BRAND.domain}`}
+                    className="text-emerald-400 hover:text-emerald-300 underline"
+                  >
+                    {BRAND.domain}
+                  </a>
+                </p>
                 <p>Email: Please use our contact form on the website</p>
               </div>
             </section>
@@ -235,25 +244,7 @@ export default function TermsOfService() {
         </div>
       </main>
 
-      <footer className="bg-black border-t border-white/10 py-6 sm:py-8 lg:py-12 mt-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex justify-center mb-6 sm:mb-8">
-            <Logo />
-          </div>
-          <div className="border-t border-white/10 pt-4 sm:pt-6 text-center">
-            <p className="text-gray-500 text-xs sm:text-sm">
-              © 2026 uk10topslot.com. For educational purposes only. 18+ only. Please gamble responsibly.
-            </p>
-            <div className="mt-4 flex justify-center gap-4 text-xs sm:text-sm">
-              <a href="/" className="text-emerald-400 hover:text-emerald-300">Home</a>
-              <span className="text-gray-600">|</span>
-              <a href="/privacy" className="text-emerald-400 hover:text-emerald-300">Privacy Policy</a>
-              <span className="text-gray-600">|</span>
-              <a href="/terms" className="text-emerald-400 hover:text-emerald-300">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

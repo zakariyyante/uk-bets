@@ -1,3 +1,5 @@
+import { BRAND } from "../config/brand";
+
 interface LogoProps {
   className?: string;
 }
@@ -8,13 +10,13 @@ export default function Logo({ className = "" }: LogoProps) {
       <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Casino logo">
         <defs>
           <linearGradient id="logoBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#1d4ed8"/>
-            <stop offset="50%" stopColor="#06b6d4"/>
-            <stop offset="100%" stopColor="#3b82f6"/>
+            <stop offset="0%" stopColor="var(--primary-2)"/>
+            <stop offset="50%" stopColor="var(--accent)"/>
+            <stop offset="100%" stopColor="var(--primary)"/>
           </linearGradient>
           <linearGradient id="logoCyan" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4"/>
-            <stop offset="100%" stopColor="#8b5cf6"/>
+            <stop offset="0%" stopColor="var(--accent)"/>
+            <stop offset="100%" stopColor="var(--primary)"/>
           </linearGradient>
         </defs>
         <rect x="5" y="5" width="28" height="28" rx="4" transform="rotate(0, 19, 19)" fill="#091428" stroke="url(#logoBlue)" strokeWidth="1.5"/>
@@ -22,11 +24,11 @@ export default function Logo({ className = "" }: LogoProps) {
         <rect x="17" y="29" width="4" height="4" rx="0.5" transform="rotate(45, 19, 31)" fill="url(#logoCyan)"/>
       </svg>
       <div className="flex flex-col leading-none">
-        <span className="text-[17px] font-extrabold tracking-tight gold-text">
-          TOP
+        <span className="text-[15px] sm:text-[17px] font-extrabold tracking-tight gold-text leading-none">
+          {BRAND.name}
         </span>
-        <span className="text-[10px] font-bold tracking-[0.25em] text-blue-400/70 uppercase">
-          Casinos
+        <span className="text-[10px] font-bold tracking-[0.25em] text-[color:color-mix(in_oklab,var(--primary)_65%,transparent)] uppercase">
+          {BRAND.domain}
         </span>
       </div>
     </div>

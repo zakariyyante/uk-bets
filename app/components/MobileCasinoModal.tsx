@@ -5,6 +5,7 @@ import { Casino } from '../data/casinos';
 import CasinoCard from './CasinoCard';
 import Header from './Header';
 import Footer from './Footer';
+import { BRAND } from "../config/brand";
 
 interface MobileCasinoModalProps {
   mobileCasinos: Casino[];
@@ -20,22 +21,22 @@ export default function MobileCasinoModal({ mobileCasinos, isOnline, gclidValue 
     
     return mobileCasinos.map(casino => ({
       ...casino,
-      url: casino.url + `&s=4&utm_medium=${gclidValue}`
+      url: casino.url + `${casino.url.includes("?") ? "&" : "?"}s=4&utm_medium=${gclidValue}`
     }));
   }, [mobileCasinos, gclidValue]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#030b1a]/95 backdrop-blur-sm overflow-y-auto">
-      <div className="w-full min-h-screen bg-[#030b1a] felt-texture">
+    <div className="fixed inset-0 z-50 bg-[color:var(--background)]/95 backdrop-blur-sm overflow-y-auto">
+      <div className="w-full min-h-screen bg-[color:var(--background)] felt-texture">
         <Header />
 
         {/* Hero Section */}
-        <div className="bg-[#060f24] border-b border-blue-500/10 px-4 sm:px-6 py-3 sm:py-4 backdrop-blur">
+        <div className="bg-[color:var(--surface-1)] border-b border-blue-500/10 px-4 sm:px-6 py-3 sm:py-4 backdrop-blur">
           <div className="container mx-auto">
             <h1 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white mb-1">
-              {isOnline ? 'Top UK Casino Sites 2026' : 'New Casino Sites 2026'}
+              {isOnline ? `Top UK Casino Sites ${BRAND.year}` : `New Casino Sites ${BRAND.year}`}
             </h1>
             <h2 className="text-left sm:text-xl font-extrabold gold-text mb-1">
               {isOnline ? 'Exclusive welcome offers with same-day withdrawals at the UK\'s highest-rated platforms.' : 'Browse the top-rated casinos across the UK'}
@@ -52,7 +53,6 @@ export default function MobileCasinoModal({ mobileCasinos, isOnline, gclidValue 
                 key={casino.id} 
                 casino={casino}
                 rank={index + 1}
-                badge={index === 0 ? 'gold' : index === 1 ? 'silver' : index === 2 ? 'bronze' : index === 3 ? 'fourth' : undefined}
               />
             ))}
           </div>
